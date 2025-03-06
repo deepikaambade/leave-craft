@@ -10,6 +10,8 @@ import {
   Settings,
   LogOut,
   User,
+  PenLine,
+  BarChart,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -23,8 +25,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ onProfileClick }) => {
   const navItems = [
     { icon: Home, label: "Dashboard", href: "/" },
     { icon: CalendarDays, label: "Apply Leave", href: "/apply" },
+    { icon: PenLine, label: "Drafts", href: "/drafts" },
     { icon: Clock, label: "History", href: "/history" },
-    { icon: FileText, label: "Reports", href: "/reports" },
+    { icon: BarChart, label: "Reports", href: "/reports" },
     { icon: Settings, label: "Settings", href: "/settings" },
   ];
 

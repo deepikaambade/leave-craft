@@ -10,6 +10,9 @@ import { MainLayout } from "./components/layout/MainLayout";
 import { DashboardPage } from "./components/dashboard/DashboardPage";
 import { LeaveApplicationPage } from "./components/leave/LeaveApplicationPage";
 import History from "./pages/History";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import Drafts from "./pages/Drafts";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,12 @@ const App = () => (
           } />
           
           <Route path="/history" element={<History />} />
+          
+          <Route path="/reports" element={<Reports />} />
+          
+          <Route path="/settings" element={<Settings />} />
+          
+          <Route path="/drafts" element={<Drafts />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
