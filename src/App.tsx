@@ -9,6 +9,7 @@ import { LoginPage } from "./components/auth/LoginPage";
 import { MainLayout } from "./components/layout/MainLayout";
 import { DashboardPage } from "./components/dashboard/DashboardPage";
 import { LeaveApplicationPage } from "./components/leave/LeaveApplicationPage";
+import History from "./pages/History";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,8 @@ const App = () => (
               <LeaveApplicationPage />
             </MainLayout>
           } />
+          
+          <Route path="/history" element={<History />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>

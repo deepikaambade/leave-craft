@@ -140,7 +140,7 @@ export const DashboardPage: React.FC = () => {
                 className="flex items-center justify-center text-sm text-primary hover:underline"
               >
                 <History className="mr-1 h-3 w-3" />
-                View All History
+                View Full History
               </Link>
             </div>
           </CardContent>
