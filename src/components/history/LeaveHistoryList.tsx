@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,29 +7,12 @@ import { ArrowLeft, Calendar, CheckCheck, Clock, FileX, PenLine } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
-
-// Define the leave interface
-interface Leave {
-  id: string;
-  type: string;
-  startDate: string;
-  endDate: string;
-  status: "approved" | "rejected" | "pending" | "draft";
-  reason: string;
-  location: string;
-  createdAt: string;
-  approvals: {
-    parent: boolean;
-    dean: boolean;
-    warden: boolean;
-  };
-}
+import { Leave } from "./LeaveTypes";
 
 export const LeaveHistoryList: React.FC = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("all");
   
-  // Mock data for leave history
   const leaveHistory: Leave[] = [
     {
       id: "L1001",
@@ -109,13 +91,11 @@ export const LeaveHistoryList: React.FC = () => {
     },
   ];
 
-  // Filter leaves based on active tab
   const filteredLeaves = leaveHistory.filter(leave => {
     if (activeTab === "all") return true;
     return leave.status === activeTab;
   });
 
-  // Count leaves by status
   const counts = {
     all: leaveHistory.length,
     approved: leaveHistory.filter(leave => leave.status === "approved").length,
